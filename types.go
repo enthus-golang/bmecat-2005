@@ -173,3 +173,13 @@ type Authentification struct {
 	Login    string   `xml:"bmecat:LOGIN" validate:"required,max=60"`
 	Password string   `xml:"bmecat:PASSWORD,omitempty" validate:"max=20"`
 }
+
+type BuyerIDRef struct {
+	XMLName  xml.Name `xml:"bmecat:BUYER_IDREF"`
+	PartyID
+}
+
+type SupplierIDRef struct {
+	XMLName  xml.Name `xml:"bmecat:SUPPLIER_IDREF"`
+	PartyID
+}
