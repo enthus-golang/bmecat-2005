@@ -19,6 +19,8 @@ const (
 	PartyTypeSupplierSpecific = "supplier_specific"
 )
 
+type ContactID string
+
 type PartyID struct {
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 PARTY_ID"`
 	Type    string   `xml:"type,attr" validate:"min=1,max=250"`
@@ -159,7 +161,7 @@ type URL string
 
 type EMails struct {
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 EMAILS"`
-	EMail   []EMail `xml:"http://www.bmecat.org/bmecat/2005 EMAIL" validate:"required,dive,required,max=255"`
+	EMail   []EMail  `xml:"http://www.bmecat.org/bmecat/2005 EMAIL" validate:"required,dive,required,max=255"`
 }
 
 type EMail string
@@ -171,11 +173,45 @@ type Authentification struct {
 }
 
 type BuyerIDRef struct {
-	XMLName  xml.Name `xml:"http://www.bmecat.org/bmecat/2005 BUYER_IDREF"`
+	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 BUYER_IDREF"`
 	PartyID
 }
 
 type SupplierIDRef struct {
-	XMLName  xml.Name `xml:"http://www.bmecat.org/bmecat/2005 SUPPLIER_IDREF"`
+	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 SUPPLIER_IDREF"`
 	PartyID
+}
+
+type PIDType string
+
+const (
+	PIDBuyerSpecific    PIDType = "buyer_specific"
+	PIDEAN                      = "ean"
+	PIDGTIN                     = "gtin"
+	PIDSupplierSpecific         = "supplier_specific"
+	PIDUPC                      = "upc"
+)
+
+type SupplierPID struct {
+	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 SUPPLIER_PID"`
+	Type    PIDType  `xml:"type,attr" validate:"min=1,max=50"`
+	Value   string   `xml:",chardata" validate:"min=1,max=32"`
+}
+
+type BuyerPID struct {
+	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 BUYER_PID"`
+	Type    PIDType  `xml:"type,attr" validate:"min=1,max=50"`
+	Value   string   `xml:",chardata" validate:"min=1,max=50"`
+}
+
+type InternationalAID struct {
+	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 INTERNATIONAL_AID"`
+	Type    PIDType  `xml:"type,attr" validate:"min=1,max=50"`
+	Value   string   `xml:",chardata" validate:"min=1,max=100"`
+}
+
+type InternationalPID struct {
+	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 INTERNATIONAL_PID"`
+	Type    PIDType  `xml:"type,attr" validate:"min=1,max=50"`
+	Value   string   `xml:",chardata" validate:"min=1,max=100"`
 }
