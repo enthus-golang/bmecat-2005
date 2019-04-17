@@ -206,12 +206,20 @@ type BuyerPID struct {
 
 type InternationalAID struct {
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 INTERNATIONAL_AID"`
-	Type    PIDType  `xml:"type,attr" validate:"min=1,max=50"`
+	Type    PIDType  `xml:"type,attr,omitempty" validate:"max=50"`
 	Value   string   `xml:",chardata" validate:"min=1,max=100"`
 }
 
 type InternationalPID struct {
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 INTERNATIONAL_PID"`
-	Type    PIDType  `xml:"type,attr" validate:"min=1,max=50"`
+	Type    PIDType  `xml:"type,attr,omitempty" validate:"max=50"`
 	Value   string   `xml:",chardata" validate:"min=1,max=100"`
 }
+
+type OrderUnit string
+
+const (
+	UnitPiece OrderUnit = "C62"
+)
+
+type PriceAmount float64
