@@ -225,3 +225,5 @@ const (
 )
 
 type PriceAmount float64
+
+type Currency string
