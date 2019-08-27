@@ -1,4 +1,4 @@
-module gitlab.com/mclgmbh/gomod/bmecat
+module gitlab.com/mclgmbh/golang-pkg/bmecat
 
 go 1.12
 
