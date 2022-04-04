@@ -11,7 +11,7 @@ type TNewCatalog struct {
 	ClassificationSystem ClassificationSystem `xml:"CLASSIFICATION_SYSTEM"`
 	Formulas             Formulas             `xml:"FORMULAS"`
 	IPPDefinitions       IPPDefinitions       `xml:"IPP_DEFINITIONS"`
-	Product              Product              `xml:"PRODUCT"`
+	Product              []Product            `xml:"PRODUCT"`
 }
 
 type ClassificationSystem struct {
@@ -193,6 +193,7 @@ type InboundParams struct {
 
 type Product struct {
 	XMLName xml.Name `xml:"PRODUCT"`
+	Mode    string   `xml:"attr,mode"`
 
 	SupplierPID            TypeID                 `xml:"SUPPLIER_PID" validate:"required,max=32"`
 	SupplierIDRef          SupplierIDRef          `xml:"SUPPLIER_IDREF"`
