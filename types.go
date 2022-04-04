@@ -30,67 +30,56 @@ type PartyID struct {
 }
 
 type Name struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 NAME"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type Name2 struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 NAME2"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type Name3 struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 NAME3"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type Department struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 DEPARTMENT"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type Street struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 STREET"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type Zip struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 ZIP"`
 	Value   string   `xml:",chardata" validate:"min=1,max=20"`
 }
 
 type BoxNo struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 BOXNO"`
 	Value   string   `xml:",chardata" validate:"min=1,max=20"`
 }
 
 type ZipBox struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 ZIPBOX"`
 	Value   string   `xml:",chardata" validate:"min=1,max=20"`
 }
 
 type City struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 CITY"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type State struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 STATE"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type Country struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 COUNTRY"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
@@ -107,13 +96,6 @@ const (
 	PhonePrivate           = "private"
 )
 
-type Phone struct {
-	MultiLocale
-	XMLName xml.Name  `xml:"http://www.bmecat.org/bmecat/2005 PHONE"`
-	Type    PhoneType `xml:"type,attr,omitempty" validate:"min=1,max=50"`
-	Value   string    `xml:",chardata" validate:"min=1,max=50"`
-}
-
 type FaxType string
 
 const (
@@ -121,39 +103,27 @@ const (
 	FaxPrivate         = "private"
 )
 
-type Fax struct {
-	MultiLocale
-	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 FAX"`
-	Type    FaxType  `xml:"type,attr,omitempty" validate:"min=1,max=50"`
-	Value   string   `xml:",chardata" validate:"min=1,max=50"`
-}
-
 type ContactName struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 CONTACT_NAME"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type FirstName struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 FIRST_NAME"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type Title struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 TITLE"`
 	Value   string   `xml:",chardata" validate:"min=1,max=20"`
 }
 
 type AcademicTitle struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 ACADEMIC_TITLE"`
 	Value   string   `xml:",chardata" validate:"min=1,max=50"`
 }
 
 type ContactDescription struct {
-	MultiLocale
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 CONTACT_DESCR"`
 	Value   string   `xml:",chardata" validate:"min=1,max=250"`
 }
@@ -176,11 +146,6 @@ type Authentification struct {
 
 type BuyerIDRef struct {
 	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 BUYER_IDREF"`
-	PartyID
-}
-
-type SupplierIDRef struct {
-	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 SUPPLIER_IDREF"`
 	PartyID
 }
 
