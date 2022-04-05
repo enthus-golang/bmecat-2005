@@ -22,9 +22,13 @@ type BMEcat2005 struct {
 	UpdatePrice    *TUpdatePrice    `xml:"T_UPDATE_PRICE"`
 }
 
-func NewBMEcat2005(header Header, catalog TNewCatalog, updateProduct *TUpdateProducts, updatePrice *TUpdatePrice) *BMEcat2005 {
+func NewBMEcat2005(header Header, catalog TNewCatalog, updateProduct *TUpdateProducts, updatePrice *TUpdatePrice, xmlns string, xmlnsxsi string, xsi string, version string) *BMEcat2005 {
 	return &BMEcat2005{
 		Header:         header,
+		XMLNS:          xmlns,
+		XMLNSXSI:       xmlnsxsi,
+		XSI:            xsi,
+		Version:        version,
 		NewCatalog:     catalog,
 		UpdateProducts: updateProduct,
 		UpdatePrice:    updatePrice,
