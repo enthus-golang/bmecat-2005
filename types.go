@@ -12,20 +12,18 @@ type Language struct {
 
 type ContactID string
 
-type PartyType string
-
 const (
-	PartyTypeBuyerSpecific    PartyType = "buyer_specific"
-	PartyTypeCustomerSpecific           = "customer_specific"
-	PartyTypeDUNS                       = "duns"
-	PartyTypeILN                        = "iln"
-	PartyTypeGLN                        = "gln"
-	PartyTypeSupplierSpecific           = "supplier_specific"
+	PartyTypeBuyerSpecific    string = "buyer_specific"
+	PartyTypeCustomerSpecific        = "customer_specific"
+	PartyTypeDUNS                    = "duns"
+	PartyTypeILN                     = "iln"
+	PartyTypeGLN                     = "gln"
+	PartyTypeSupplierSpecific        = "supplier_specific"
 )
 
 type PartyID struct {
-	Type  *PartyType `xml:"type,attr" validate:"min=1,max=250"`
-	Value string     `xml:",chardata" validate:"min=1,max=250"`
+	Type  *string `xml:"type,attr" validate:"min=1,max=250"`
+	Value string  `xml:",chardata" validate:"min=1,max=250"`
 }
 
 type Name struct {
