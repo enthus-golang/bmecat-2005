@@ -173,7 +173,7 @@ type Parties struct {
 type Party struct {
 	XMLName xml.Name `xml:"PARTY"`
 
-	ID        TypeID    `xml:"PARTY_ID"`
+	ID        PartyID   `xml:"PARTY_ID"`
 	PartyRole []string  `xml:"PARTY_ROLE"`
 	Address   *Address  `xml:"ADDRESS"`
 	MimeInfo  *MIMEInfo `xml:"MIME_INFO"`
