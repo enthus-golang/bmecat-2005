@@ -93,13 +93,20 @@ type Source struct {
 	PartyID TypeID   `xml:"PARTY_IDREF"`
 }
 
+type FormulaSource struct {
+	XMLName xml.Name `xml:"FORMULA_SOURCE"`
+	Name    string   `xml:"SOURCE_NAME"`
+	URI     string   `xml:"SOURCE_URI"`
+	PartyID TypeID   `xml:"PARTY_IDREF"`
+}
+
 type Formulas struct {
 	XMLName              xml.Name             `xml:"FORMULAS"`
 	FormulaID            string               `xml:"FORMULA_ID"`
 	Version              VersionDetails       `xml:"FORMULA_VERSION"`
 	Name                 string               `xml:"FORMULA_NAME"`
 	Description          string               `xml:"FORMULA_DESCR"`
-	Source               Source               `xml:"FORMULA_SOURCE"`
+	Source               FormulaSource        `xml:"FORMULA_SOURCE"`
 	MIMEInfo             MIMEInfo             `xml:"MIME_INFO"`
 	FormulaFunction      FormulaFunction      `xml:"FORMULA_FUNCTION"`
 	ParameterDefinitions ParameterDefinitions `xml:"PARAMETER_DEFINITIONS"`
@@ -303,9 +310,16 @@ type FeatureContent struct {
 	Symbol    string   `xml:"FT_SYMBOL"`
 	Synonyms  Synonyms `xml:"FT_SYNONYMS"`
 	MIMEInfo  MIMEInfo `xml:"MIME_INFO"`
-	Source    Source   `xml:"FT_SOURCE"`
+	Source    FTSource `xml:"FT_SOURCE"`
 	Note      string   `xml:"FT_NOTE"`
 	Remark    string   `xml:"FT_REMARK"`
+}
+
+type FTSource struct {
+	XMLName xml.Name `xml:"FT_SOURCE"`
+	Name    string   `xml:"SOURCE_NAME"`
+	URI     string   `xml:"SOURCE_URI"`
+	PartyID TypeID   `xml:"PARTY_IDREF"`
 }
 
 type Facets struct {
