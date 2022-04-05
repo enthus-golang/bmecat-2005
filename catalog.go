@@ -18,7 +18,7 @@ type ClassificationSystem struct {
 	XMLName xml.Name `xml:"CLASSIFICATION_SYSTEM"`
 
 	Name           string          `xml:"CLASSIFICATION_SYSTEM_NAME"`
-	Groups         []Groups        `xml:"CLASSIFICATION_GROUPS"`
+	Groups         Groups          `xml:"CLASSIFICATION_GROUPS"`
 	FullName       *string         `xml:"CLASSIFICATION_SYSTEM_FULLNAME"`
 	VersionDetails *VersionDetails `xml:"CLASSIFICATION_SYSTEM_VERSION_DETAILS"`
 	Description    *string         `xml:"CLASSIFICATION_SYSTEM_DESCR"`
