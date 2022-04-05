@@ -160,9 +160,8 @@ const (
 )
 
 type SupplierPID struct {
-	XMLName xml.Name `xml:"http://www.bmecat.org/bmecat/2005 SUPPLIER_PID"`
-	Type    PIDType  `xml:"type,attr,omitempty" validate:"min=1,max=50"`
-	Value   string   `xml:",chardata" validate:"min=1,max=32"`
+	Type  PIDType `xml:"type,attr,omitempty" validate:"min=1,max=50"`
+	Value string  `xml:",chardata" validate:"min=1,max=32"`
 }
 
 type BuyerPID struct {
