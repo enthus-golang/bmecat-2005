@@ -200,7 +200,7 @@ type InboundParams struct {
 
 type Product struct {
 	XMLName xml.Name `xml:"PRODUCT"`
-	Mode    string   `xml:"attr,mode"`
+	Mode    string   `xml:"mode, attr"`
 
 	SupplierPID            TypeID                  `xml:"SUPPLIER_PID" validate:"required,max=32"`
 	SupplierIDRef          *SupplierIDRef          `xml:"SUPPLIER_IDREF"`
@@ -221,21 +221,21 @@ type ProductDetails struct {
 	XMLName xml.Name `xml:"PRODUCT_DETAILS"`
 
 	DescriptionShort             string               `xml:"DESCRIPTION_SHORT" validate:"required,max=80"`
-	DescriptionLong              string               `xml:"DESCRIPTION_LONG,omitempty" validate:"max=64000"`
+	DescriptionLong              string               `xml:"DESCRIPTION_LONG" validate:"max=64000"`
 	InternationalPID             *[]TypeID            `xml:"INTERNATIONAL_PID" validate:"max=100"`
-	SupplierAlternativeArticleID string               `xml:"SUPPLIER_ALT_AID,omitempty" validate:"max=50"`
+	SupplierAlternativeArticleID string               `xml:"SUPPLIER_ALT_AID" validate:"max=50"`
 	BuyerProductID               []BuyerProductID     `xml:"BUYER_PID"`
-	ManufacturerProductID        *string              `xml:"MANUFACTURER_PID,omitempty" validate:"max=50"`
-	ManufacturerID               *TypeID              `xml:"MANUFACTURER_IDREF,omitempty" validate:"max=250"`
-	ManufacturerTypeDescription  *string              `xml:"MANUFACTURER_TYPE_DESCR,omitempty" validate:"max=50"`
-	ERPGroupBuyer                *string              `xml:"ERP_GROUP_BUYER,omitempty" validate:"max=10"`
-	ERPGroupSupplier             *string              `xml:"ERP_GROUP_SUPPLIER,omitempty" validate:"max=10"`
-	SpecialTreatmentClass        *string              `xml:"SPECIAL_TREATMENT_CLASS,omitempty" validate:"max=20"`
+	ManufacturerProductID        *string              `xml:"MANUFACTURER_PID" validate:"max=50"`
+	ManufacturerID               *TypeID              `xml:"MANUFACTURER_IDREF" validate:"max=250"`
+	ManufacturerTypeDescription  *string              `xml:"MANUFACTURER_TYPE_DESCR" validate:"max=50"`
+	ERPGroupBuyer                *string              `xml:"ERP_GROUP_BUYER" validate:"max=10"`
+	ERPGroupSupplier             *string              `xml:"ERP_GROUP_SUPPLIER" validate:"max=10"`
+	SpecialTreatmentClass        *string              `xml:"SPECIAL_TREATMENT_CLASS" validate:"max=20"`
 	Keyword                      *string              `xml:"KEYWORD,omitempty" validate:"max=50"`
 	Remarks                      TypeID               `xml:"REMARKS,omitempty" validate:"max=64000"`
 	Segment                      *string              `xml:"SEGMENT,omitempty" validate:"max=100"`
-	ArticleOrder                 *int                 `xml:"ARTICLE_ORDER,omitempty"`
-	ProductStatus                []TypeID             `xml:"PRODUCT_STATUS,omitempty" validate:"max=250"`
+	ArticleOrder                 *int                 `xml:"ARTICLE_ORDER"`
+	ProductStatus                []TypeID             `xml:"PRODUCT_STATUS" validate:"max=250"`
 	InternationalRestrictions    []TypeID             `xml:"INTERNATIONAL_RESTRICTIONS"`
 	AccountingInfo               *AccountingInfo      `xml:"ACCOUNTING_INFO"`
 	AgreementReference           []AgreementReference `xml:"AGREEMENT_REF"`
@@ -258,10 +258,10 @@ type ProductFeature struct {
 	XMLName xml.Name `xml:"PRODUCT_FEATURES"`
 
 	ReferenceFeatureSystemName string         `xml:"REFERENCE_FEATURE_SYSTEM_NAME,omitempty" validate:"max=50"`
-	ReferenceFeatureGroupID    TypeID         `xml:"REFERENCE_FEATURE_GROUP_ID,omitempty" validate:"max=60"`
+	ReferenceFeatureGroupID    *TypeID        `xml:"REFERENCE_FEATURE_GROUP_ID,omitempty" validate:"max=60"`
 	ReferenceFeatureGroupName  string         `xml:"REFERENCE_FEATURE_GROUP_NAME,omitempty" validate:"max=60"`
-	ReferenceFeatureGroupID2   TypeID         `xml:"REFERENCE_FEATURE_GROUP_ID2,omitempty" validate:"max=60"`
-	GroupProductOrder          int            `xml:"GROUP_PRODUCT_ORDER"`
+	ReferenceFeatureGroupID2   *TypeID        `xml:"REFERENCE_FEATURE_GROUP_ID2,omitempty" validate:"max=60"`
+	GroupProductOrder          *int           `xml:"GROUP_PRODUCT_ORDER"`
 	Features                   []Feature      `xml:"FEATURE"`
 	FeatureGroups              []FeatureGroup `xml:"FEATURE_GROUP"`
 }
