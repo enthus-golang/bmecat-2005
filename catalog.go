@@ -202,19 +202,19 @@ type Product struct {
 	XMLName xml.Name `xml:"PRODUCT"`
 	Mode    string   `xml:"attr,mode"`
 
-	SupplierPID            TypeID                 `xml:"SUPPLIER_PID" validate:"required,max=32"`
-	SupplierIDRef          SupplierIDRef          `xml:"SUPPLIER_IDREF"`
-	ProductDetails         ProductDetails         `xml:"PRODUCT_DETAILS"`
-	ProductFeatures        []ProductFeature       `xml:"PRODUCT_FEATURES"`
-	ProductOrderDetails    ProductOrderDetails    `xml:"PRODUCT_ORDER_DETAILS"`
-	ProductPriceDetails    ProductPriceDetails    `xml:"PRODUCT_PRICE_DETAILS"`
-	MimeInfo               *MIMEInfo              `xml:"MIME_INFO"`
-	UserDefinedExtensions  string                 `xml:"USER_DEFINED_EXTENSIONS"`
-	ProductReferences      []ProductReference     `xml:"PRODUCT_REFERENCE"`
-	ProductContacts        ProductContacts        `xml:"PRODUCT_CONTACTS"`
-	ProductIPPDetails      ProductIPPDetails      `xml:"PRODUCT_IPP_DETAILS"`
-	ProductLogisticDetails ProductLogisticDetails `xml:"PRODUCT_LOGISTIC_DETAILS"`
-	ProductConfigDetails   ProductConfigDetails   `xml:"PRODUCT_CONFIG_DETAILS"`
+	SupplierPID            TypeID                  `xml:"SUPPLIER_PID" validate:"required,max=32"`
+	SupplierIDRef          *SupplierIDRef          `xml:"SUPPLIER_IDREF"`
+	ProductDetails         ProductDetails          `xml:"PRODUCT_DETAILS"`
+	ProductFeatures        []ProductFeature        `xml:"PRODUCT_FEATURES"`
+	ProductOrderDetails    ProductOrderDetails     `xml:"PRODUCT_ORDER_DETAILS"`
+	ProductPriceDetails    ProductPriceDetails     `xml:"PRODUCT_PRICE_DETAILS"`
+	MimeInfo               *MIMEInfo               `xml:"MIME_INFO"`
+	UserDefinedExtensions  *string                 `xml:"USER_DEFINED_EXTENSIONS"`
+	ProductReferences      []ProductReference      `xml:"PRODUCT_REFERENCE"`
+	ProductContacts        *ProductContacts        `xml:"PRODUCT_CONTACTS"`
+	ProductIPPDetails      *ProductIPPDetails      `xml:"PRODUCT_IPP_DETAILS"`
+	ProductLogisticDetails *ProductLogisticDetails `xml:"PRODUCT_LOGISTIC_DETAILS"`
+	ProductConfigDetails   *ProductConfigDetails   `xml:"PRODUCT_CONFIG_DETAILS"`
 }
 
 type ProductDetails struct {
@@ -222,19 +222,19 @@ type ProductDetails struct {
 
 	DescriptionShort             string               `xml:"DESCRIPTION_SHORT" validate:"required,max=80"`
 	DescriptionLong              string               `xml:"DESCRIPTION_LONG,omitempty" validate:"max=64000"`
-	InternationalPID             TypeID               `xml:"INTERNATIONAL_PID" validate:"max=100"`
+	InternationalPID             *[]TypeID            `xml:"INTERNATIONAL_PID" validate:"max=100"`
 	SupplierAlternativeArticleID string               `xml:"SUPPLIER_ALT_AID,omitempty" validate:"max=50"`
 	BuyerProductID               []BuyerProductID     `xml:"BUYER_PID"`
-	ManufacturerProductID        string               `xml:"MANUFACTURER_PID,omitempty" validate:"max=50"`
-	ManufacturerID               TypeID               `xml:"MANUFACTURER_IDREF,omitempty" validate:"max=250"`
-	ManufacturerTypeDescription  string               `xml:"MANUFACTURER_TYPE_DESCR,omitempty" validate:"max=50"`
-	ERPGroupBuyer                string               `xml:"ERP_GROUP_BUYER,omitempty" validate:"max=10"`
-	ERPGroupSupplier             string               `xml:"ERP_GROUP_SUPPLIER,omitempty" validate:"max=10"`
-	SpecialTreatmentClass        string               `xml:"SPECIAL_TREATMENT_CLASS,omitempty" validate:"max=20"`
-	Keyword                      string               `xml:"KEYWORD,omitempty" validate:"max=50"`
+	ManufacturerProductID        *string              `xml:"MANUFACTURER_PID,omitempty" validate:"max=50"`
+	ManufacturerID               *TypeID              `xml:"MANUFACTURER_IDREF,omitempty" validate:"max=250"`
+	ManufacturerTypeDescription  *string              `xml:"MANUFACTURER_TYPE_DESCR,omitempty" validate:"max=50"`
+	ERPGroupBuyer                *string              `xml:"ERP_GROUP_BUYER,omitempty" validate:"max=10"`
+	ERPGroupSupplier             *string              `xml:"ERP_GROUP_SUPPLIER,omitempty" validate:"max=10"`
+	SpecialTreatmentClass        *string              `xml:"SPECIAL_TREATMENT_CLASS,omitempty" validate:"max=20"`
+	Keyword                      *string              `xml:"KEYWORD,omitempty" validate:"max=50"`
 	Remarks                      TypeID               `xml:"REMARKS,omitempty" validate:"max=64000"`
-	Segment                      string               `xml:"SEGMENT,omitempty" validate:"max=100"`
-	ArticleOrder                 int                  `xml:"ARTICLE_ORDER,omitempty"`
+	Segment                      *string              `xml:"SEGMENT,omitempty" validate:"max=100"`
+	ArticleOrder                 *int                 `xml:"ARTICLE_ORDER,omitempty"`
 	ProductStatus                []TypeID             `xml:"PRODUCT_STATUS,omitempty" validate:"max=250"`
 	InternationalRestrictions    []TypeID             `xml:"INTERNATIONAL_RESTRICTIONS"`
 	AccountingInfo               *AccountingInfo      `xml:"ACCOUNTING_INFO"`
