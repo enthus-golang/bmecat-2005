@@ -2,23 +2,12 @@ package bmecat
 
 import "encoding/xml"
 
-const (
-	XMLNS    string = "http://www.bmecat.org/bmecat/2005/bmecat_new_catalog"
-	XMLNSXSI        = "http://www.w3.org/2001/XMLSchema-instance"
-	XSI             = "http://www.bmecat.org/bmecat/2005 bmecat_2005.xsd"
-)
-
 type Header struct {
-	XMLName  xml.Name `xml:"HEADER"`
-	XMLNS    string   `xml:"xmlns,attr"`
-	XMLNSXSI string   `xml:"xmlns:xsi,attr"`
-	XSI      string   `xml:"xsi,attr"`
+	XMLName              xml.Name `xml:"HEADER"`
+	GeneratorInformation *string  `xml:"GENERATOR_INFO"`
+	CatalogInformation   Catalog  `xml:"CATALOG"`
 
-	Version              string  `xml:"version,attr"`
-	GeneratorInformation string  `xml:"GENERATOR_INFO"`
-	CatalogInformation   Catalog `xml:"CATALOG"`
-
-	BuyerID TypeID `xml:"BUYER_IDREF"`
+	BuyerID *TypeID `xml:"BUYER_IDREF"`
 
 	SkeletonAgreements    []Agreement   `xml:"AGREEMENT"`
 	LegalInfo             []LegalInfo   `xml:"LEGAL_INFO"`

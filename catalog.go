@@ -9,24 +9,24 @@ type TNewCatalog struct {
 	XMLName xml.Name `xml:"T_NEW_CATALOG"`
 
 	ClassificationSystem ClassificationSystem `xml:"CLASSIFICATION_SYSTEM"`
-	Formulas             Formulas             `xml:"FORMULAS"`
-	IPPDefinitions       IPPDefinitions       `xml:"IPP_DEFINITIONS"`
+	Formulas             *Formulas            `xml:"FORMULAS"`
+	IPPDefinitions       *IPPDefinitions      `xml:"IPP_DEFINITIONS"`
 	Product              []Product            `xml:"PRODUCT"`
 }
 
 type ClassificationSystem struct {
 	XMLName xml.Name `xml:"CLASSIFICATION_SYSTEM"`
 
-	Name           string         `xml:"CLASSIFICATION_SYSTEM_NAME"`
-	Groups         []Group        `xml:"CLASSIFICATION_GROUPS"`
-	FullName       string         `xml:"CLASSIFICATION_SYSTEM_FULLNAME"`
-	VersionDetails VersionDetails `xml:"CLASSIFICATION_SYSTEM_VERSION_DETAILS"`
-	Description    string         `xml:"CLASSIFICATION_SYSTEM_DESCR"`
-	PartyID        TypeID         `xml:"CLASSIFICATION_SYSTEM_PARTY_IDREF"`
-	Level          int            `xml:"CLASSIFICATION_SYSTEM_LEVELS"`
-	LevelNames     LevelNames     `xml:"CLASSIFICATION_SYSTEM_LEVEL_NAMES"`
-	SystemType     SystemType     `xml:"CLASSIFICATION_SYSTEM_TYPE"`
-	AllowedValues  AllowedValues  `xml:"ALLOWED_VALUES"`
+	Name           string          `xml:"CLASSIFICATION_SYSTEM_NAME"`
+	Groups         []Group         `xml:"CLASSIFICATION_GROUPS"`
+	FullName       *string         `xml:"CLASSIFICATION_SYSTEM_FULLNAME"`
+	VersionDetails *VersionDetails `xml:"CLASSIFICATION_SYSTEM_VERSION_DETAILS"`
+	Description    *string         `xml:"CLASSIFICATION_SYSTEM_DESCR"`
+	PartyID        *TypeID         `xml:"CLASSIFICATION_SYSTEM_PARTY_IDREF"`
+	Level          *int            `xml:"CLASSIFICATION_SYSTEM_LEVELS"`
+	LevelNames     *LevelNames     `xml:"CLASSIFICATION_SYSTEM_LEVEL_NAMES"`
+	SystemType     *SystemType     `xml:"CLASSIFICATION_SYSTEM_TYPE"`
+	AllowedValues  *AllowedValues  `xml:"ALLOWED_VALUES"`
 }
 
 type Group struct {

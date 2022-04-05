@@ -24,9 +24,8 @@ const (
 )
 
 type PartyID struct {
-	XMLName xml.Name  `xml:"http://www.bmecat.org/bmecat/2005 PARTY_ID"`
-	Type    PartyType `xml:"type,attr" validate:"min=1,max=250"`
-	Value   string    `xml:",chardata" validate:"min=1,max=250"`
+	Type  *PartyType `xml:"type,attr" validate:"min=1,max=250"`
+	Value string     `xml:",chardata" validate:"min=1,max=250"`
 }
 
 type Name struct {
