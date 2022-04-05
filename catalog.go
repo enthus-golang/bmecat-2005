@@ -398,7 +398,7 @@ type BuyerProductID struct {
 }
 
 type ProductOrderDetails struct {
-	XMLName xml.Name `xml:"ARTICLE_ORDER_DETAILS"`
+	XMLName xml.Name `xml:"PRODUCT_ORDER_DETAILS"`
 
 	OrderUnit                     string        `xml:"ORDER_UNIT" validate:"max=3"`
 	ContentUnit                   string        `xml:"CONTENT_UNIT,omitempty" validate:"max=3"`
