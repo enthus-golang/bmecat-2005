@@ -507,7 +507,7 @@ type IPPParam struct {
 type ProductLogisticDetails struct {
 	CustomsTariffNo  CustomsTariffNo  `xml:"CUSTOMS_TARIFF_NUMBER"`
 	StatisticFactor  float64          `xml:"STATISTICS_FACTOR"`
-	CountryOfOrigin  Country          `xml:"COUNTRY_OF_ORIGIN"`
+	CountryOfOrigin  string           `xml:"COUNTRY_OF_ORIGIN"`
 	ProductDimension ProductDimension `xml:"PRODUCT_DIMENSIONS"`
 	DeliveryTimes    []DeliveryTimes  `xml:"DELIVERY_TIMES"`
 	Transport        []Transport      `xml:"TRANSPORT"`
