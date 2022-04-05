@@ -32,25 +32,25 @@ type Header struct {
 type Catalog struct {
 	XMLName xml.Name `xml:"CATALOG"`
 
-	Language        string          `xml:"LANGUAGE" validate:"omitempty,len=2"`
-	Locale          []string        `xml:"LOCALE"`
-	ID              string          `xml:"CATALOG_ID" validate:"max=20"`
-	Version         string          `xml:"CATALOG_VERSION" validate:"max=7"`
-	Name            string          `xml:"CATALOG_NAME,omitempty" validate:"max=100"`
-	GenerationDate  Datetime        `xml:"GENERATION_DATE"`
-	Territory       []string        `xml:"TERRITORY"`
-	AreaRefs        AreaRefs        `xml:"AREA_REFS"`
-	Currency        Currency        `xml:"CURRENCY"`
-	MimeRoot        string          `xml:"MIME_	ROOT"`
-	PriceFlag       []TypeID        `xml:"PRICE_FLAG"`
-	PriceFactor     float64         `xml:"PRICE_FACTOR"`
-	StartDate       Datetime        `xml:"VALID_START_DATE"`
-	EndDate         Datetime        `xml:"VALID_END_DATE"`
-	ProductType     string          `xml:"PRODUCT_TYPE"`
-	CountryOfOrigin string          `xml:"COUNTRY_OF_ORIGIN"`
-	DeliveryTimes   []DeliveryTimes `xml:"DELIVERY_TIMES"`
-	Transport       Transport       `xml:"TRANSPORT"`
-	SupplierIDRef   SupplierIDRef   `xml:"SUPPLIER_IDREF"`
+	Language        string           `xml:"LANGUAGE" validate:"omitempty,len=2"`
+	Locale          []string         `xml:"LOCALE"`
+	ID              string           `xml:"CATALOG_ID" validate:"max=20"`
+	Version         string           `xml:"CATALOG_VERSION" validate:"max=7"`
+	Name            string           `xml:"CATALOG_NAME,omitempty" validate:"max=100"`
+	GenerationDate  *Datetime        `xml:"GENERATION_DATE"`
+	Territory       []string         `xml:"TERRITORY"`
+	AreaRefs        *AreaRefs        `xml:"AREA_REFS"`
+	Currency        *Currency        `xml:"CURRENCY"`
+	MimeRoot        *string          `xml:"MIME_	ROOT"`
+	PriceFlag       []TypeID         `xml:"PRICE_FLAG"`
+	PriceFactor     *float64         `xml:"PRICE_FACTOR"`
+	StartDate       *Datetime        `xml:"VALID_START_DATE"`
+	EndDate         *Datetime        `xml:"VALID_END_DATE"`
+	ProductType     *string          `xml:"PRODUCT_TYPE"`
+	CountryOfOrigin *string          `xml:"COUNTRY_OF_ORIGIN"`
+	DeliveryTimes   *[]DeliveryTimes `xml:"DELIVERY_TIMES"`
+	Transport       *Transport       `xml:"TRANSPORT"`
+	SupplierIDRef   *SupplierIDRef   `xml:"SUPPLIER_IDREF"`
 }
 type Buyer struct {
 	XMLName xml.Name `xml:"BUYER"`
@@ -117,8 +117,8 @@ type Fax struct {
 }
 
 type TypeID struct {
-	Type  string `xml:"type,attr" validate:"required"`
-	Value string `xml:",innerxml" validate:"required"`
+	Type  *string `xml:"type,attr" validate:"required"`
+	Value string  `xml:",innerxml" validate:"required"`
 }
 
 type Agreement struct {
@@ -184,10 +184,10 @@ type Parties struct {
 type Party struct {
 	XMLName xml.Name `xml:"PARTY"`
 
-	ID        TypeID   `xml:"PARTY_ID"`
-	PartyRole []string `xml:"PARTY_ROLE"`
-	Address   Address  `xml:"ADDRESS"`
-	MimeInfo  MIMEInfo `xml:"MIME_INFO"`
+	ID        TypeID    `xml:"PARTY_ID"`
+	PartyRole []string  `xml:"PARTY_ROLE"`
+	Address   *Address  `xml:"ADDRESS"`
+	MimeInfo  *MIMEInfo `xml:"MIME_INFO"`
 }
 
 type Areas struct {
