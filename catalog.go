@@ -462,9 +462,11 @@ type PriceFlag struct {
 }
 
 type ProductReference struct {
-	Value    string
-	Type     string  `xml:"type,attr"`
-	Quantity float64 `xml:"quantity,attr"`
+	XMLName  xml.Name `xml:"PRODUCT_REFERENCE"`
+	Type     string   `xml:"type,attr"`
+	Quantity float64  `xml:"quantity,attr"`
+
+	Value string `xml:"PROD_ID_TO"`
 }
 
 type ProductContacts struct {
