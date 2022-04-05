@@ -200,7 +200,7 @@ type InboundParams struct {
 
 type Product struct {
 	XMLName xml.Name `xml:"PRODUCT"`
-	Mode    string   `xml:"mode, attr"`
+	Mode    string   `xml:"mode,attr"`
 
 	SupplierPID            TypeID                  `xml:"SUPPLIER_PID" validate:"required,max=32"`
 	SupplierIDRef          *SupplierIDRef          `xml:"SUPPLIER_IDREF"`

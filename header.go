@@ -14,8 +14,8 @@ type Header struct {
 	SupplierID            SupplierIDRef `xml:"SUPPLIER_IDREF"`
 	DocumentCreatorID     TypeID        `xml:"DOCUMENT_CREATOR_IDREF"`
 	Parties               Parties       `xml:"PARTIES"`
-	Areas                 Areas         `xml:"AREAS"`
-	UserDefinedExtensions string        `xml:"USER_DEFINED_EXTENSIONS"`
+	Areas                 *Areas        `xml:"AREAS"`
+	UserDefinedExtensions *string       `xml:"USER_DEFINED_EXTENSIONS"`
 }
 
 type Catalog struct {
