@@ -205,7 +205,7 @@ type Product struct {
 	SupplierPID            TypeID                  `xml:"SUPPLIER_PID" validate:"required,max=32"`
 	SupplierIDRef          *SupplierIDRef          `xml:"SUPPLIER_IDREF"`
 	ProductDetails         ProductDetails          `xml:"PRODUCT_DETAILS"`
-	ProductFeatures        []ProductFeature        `xml:"PRODUCT_FEATURES"`
+	ProductFeatures        *[]ProductFeature       `xml:"PRODUCT_FEATURES"`
 	ProductOrderDetails    ProductOrderDetails     `xml:"PRODUCT_ORDER_DETAILS"`
 	ProductPriceDetails    ProductPriceDetails     `xml:"PRODUCT_PRICE_DETAILS"`
 	MimeInfo               *MIMEInfo               `xml:"MIME_INFO"`
@@ -262,7 +262,7 @@ type ProductFeature struct {
 	ReferenceFeatureGroupName  string         `xml:"REFERENCE_FEATURE_GROUP_NAME,omitempty" validate:"max=60"`
 	ReferenceFeatureGroupID2   TypeID         `xml:"REFERENCE_FEATURE_GROUP_ID2,omitempty" validate:"max=60"`
 	GroupProductOrder          int            `xml:"GROUP_PRODUCT_ORDER"`
-	Features                   []Feature      `xml:"FEATURE"`
+	Features                   *[]Feature     `xml:"FEATURE"`
 	FeatureGroups              []FeatureGroup `xml:"FEATURE_GROUP"`
 }
 
