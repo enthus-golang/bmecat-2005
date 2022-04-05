@@ -421,8 +421,43 @@ type ProductPriceDetails struct {
 
 type ProductPrice struct {
 	XMLName xml.Name `xml:"PRODUCT_PRICE"`
-	Value   string
-	Type    string `xml:"price_type,attr"`
+	Type    string   `xml:"price_type,attr"`
+
+	PriceFormula PriceFormula
+	Currency     string
+	TaxDetails   TaxDetails
+	Tax          float64
+	Factor       float64
+	LowerBound   float64
+	Territory    string
+	AreaRefs     AreaRefs
+	PriceBase    PriceBase
+	PriceFlag    PriceFlag
+}
+
+type PriceFormula struct {
+	ID         string     `xml:"FORMULA_IDREF"`
+	Parameters Parameters `xml:"PARAMETERS"`
+}
+
+type TaxDetails struct {
+	CalculationSequence int     `xml:"CALCULATION_SEQUENCE"`
+	Category            string  `xml:"TAX_CATEGORY"`
+	Type                string  `xml:"TAX_TYPE"`
+	Tax                 float64 `xml:"TAX"`
+	ExemptionReason     string  `xml:"EXEMPTION_REASON"`
+	Jurisdiction        string  `xml:"JURISDICTION"`
+}
+
+type PriceBase struct {
+	PriceUnit       float64 `xml:"PRICE_UNIT"`
+	PriceUnitFactor float64 `xml:"PRICE_UNIT_FACTOR"`
+	Synonym         string  `xml:"SYNONYM"`
+}
+
+type PriceFlag struct {
+	Value bool
+	Type  string `xml:"type,attr"`
 }
 
 type ProductReference struct {
