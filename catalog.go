@@ -18,7 +18,7 @@ type ClassificationSystem struct {
 	XMLName xml.Name `xml:"CLASSIFICATION_SYSTEM"`
 
 	Name           string          `xml:"CLASSIFICATION_SYSTEM_NAME"`
-	Groups         []Group         `xml:"CLASSIFICATION_GROUPS"`
+	Groups         []Groups        `xml:"CLASSIFICATION_GROUPS"`
 	FullName       *string         `xml:"CLASSIFICATION_SYSTEM_FULLNAME"`
 	VersionDetails *VersionDetails `xml:"CLASSIFICATION_SYSTEM_VERSION_DETAILS"`
 	Description    *string         `xml:"CLASSIFICATION_SYSTEM_DESCR"`
@@ -28,7 +28,10 @@ type ClassificationSystem struct {
 	SystemType     *SystemType     `xml:"CLASSIFICATION_SYSTEM_TYPE"`
 	AllowedValues  *AllowedValues  `xml:"ALLOWED_VALUES"`
 }
-
+type Groups struct {
+	XMLName xml.Name `xml:"CLASSIFICATION_GROUPS"`
+	Group   []Group  `xml:"CLASSIFICATION_GROUP"`
+}
 type Group struct {
 	XMLName xml.Name `xml:"CLASSIFICATION_GROUP"`
 
@@ -232,7 +235,7 @@ type ProductDetails struct {
 	ERPGroupSupplier             *string              `xml:"ERP_GROUP_SUPPLIER" validate:"max=10"`
 	SpecialTreatmentClass        *string              `xml:"SPECIAL_TREATMENT_CLASS" validate:"max=20"`
 	Keyword                      *string              `xml:"KEYWORD,omitempty" validate:"max=50"`
-	Remarks                      TypeID               `xml:"REMARKS,omitempty" validate:"max=64000"`
+	Remarks                      *TypeID              `xml:"REMARKS,omitempty" validate:"max=64000"`
 	Segment                      *string              `xml:"SEGMENT,omitempty" validate:"max=100"`
 	ArticleOrder                 *int                 `xml:"ARTICLE_ORDER"`
 	ProductStatus                []TypeID             `xml:"PRODUCT_STATUS" validate:"max=250"`
@@ -400,16 +403,16 @@ type BuyerProductID struct {
 type ProductOrderDetails struct {
 	XMLName xml.Name `xml:"PRODUCT_ORDER_DETAILS"`
 
-	OrderUnit                     string        `xml:"ORDER_UNIT" validate:"max=3"`
-	ContentUnit                   string        `xml:"CONTENT_UNIT,omitempty" validate:"max=3"`
-	NumberContentUnitPerOrderUnit float64       `xml:"NO_CU_PER_OU,omitempty"`
-	SupplierPID                   SupplierPID   `xml:"SUPPLIER_PIDREF"`
-	SupplierIDRef                 SupplierIDRef `xml:"SUPPLIER_IDREF"`
-	PriceQuantity                 float64       `xml:"PRICE_QUANTITY"`
-	QuantityMinimum               float64       `xml:"QUANTITY_MIN,omitempty"`
-	QuantityInterval              float64       `xml:"QUANTITY_INTERVAL,omitempty"`
-	QuantityMaximum               float64       `xml:"QUANTITY_MAX"`
-	PackingUnits                  PackingUnits  `xml:"PACKING_UNITS"`
+	OrderUnit                     string         `xml:"ORDER_UNIT" validate:"max=3"`
+	ContentUnit                   string         `xml:"CONTENT_UNIT,omitempty" validate:"max=3"`
+	NumberContentUnitPerOrderUnit float64        `xml:"NO_CU_PER_OU,omitempty"`
+	SupplierPID                   *SupplierPID   `xml:"SUPPLIER_PIDREF"`
+	SupplierIDRef                 *SupplierIDRef `xml:"SUPPLIER_IDREF"`
+	PriceQuantity                 *float64       `xml:"PRICE_QUANTITY"`
+	QuantityMinimum               float64        `xml:"QUANTITY_MIN,omitempty"`
+	QuantityInterval              float64        `xml:"QUANTITY_INTERVAL,omitempty"`
+	QuantityMaximum               *float64       `xml:"QUANTITY_MAX"`
+	PackingUnits                  *PackingUnits  `xml:"PACKING_UNITS"`
 }
 type PackingUnits struct {
 	PackingUnit PackingUnit `xml:"PACKING_UNIT"`
