@@ -8,7 +8,7 @@ type Datetime struct {
 	Date string
 }
 
-func NewDatetime(t time.Time, withTime bool) *Datetime {
+func NewDatetime(t time.Time) *Datetime {
 	d := &Datetime{
 		Date: t.Format("2006-01-02"),
 	}
