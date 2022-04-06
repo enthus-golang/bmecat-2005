@@ -5,17 +5,12 @@ import (
 )
 
 type Datetime struct {
-	Date string `xml:"DATE"`
-	Time string `xml:"TIME,omitempty"`
+	Date string
 }
 
 func NewDatetime(t time.Time, withTime bool) *Datetime {
 	d := &Datetime{
 		Date: t.Format("2006-01-02"),
-	}
-
-	if withTime {
-		d.Time = t.Format("15:04:05")
 	}
 
 	return d
