@@ -28,10 +28,12 @@ type ClassificationSystem struct {
 	SystemType     *SystemType     `xml:"CLASSIFICATION_SYSTEM_TYPE"`
 	AllowedValues  *AllowedValues  `xml:"ALLOWED_VALUES"`
 }
+
 type Groups struct {
 	XMLName xml.Name `xml:"CLASSIFICATION_GROUPS"`
 	Group   []Group  `xml:"CLASSIFICATION_GROUP"`
 }
+
 type Group struct {
 	XMLName xml.Name `xml:"CLASSIFICATION_GROUP"`
 
