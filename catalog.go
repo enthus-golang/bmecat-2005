@@ -432,8 +432,8 @@ type PackingUnit struct {
 type ProductPriceDetails struct {
 	XMLName xml.Name `xml:"PRODUCT_PRICE_DETAILS"`
 
-	StartDate    Date         `xml:"VALID_START_DATE"`
-	EndDate      Date         `xml:"VALID_END_DATE"`
+	StartDate    *Date        `xml:"VALID_START_DATE"`
+	EndDate      *Date        `xml:"VALID_END_DATE"`
 	DailyPrice   bool         `xml:"DAILY_PRICE"`
 	ProductPrice ProductPrice `xml:"PRODUCT_PRICE"`
 }
