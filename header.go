@@ -26,15 +26,15 @@ type Catalog struct {
 	ID              string           `xml:"CATALOG_ID" validate:"max=20"`
 	Version         string           `xml:"CATALOG_VERSION" validate:"max=7"`
 	Name            string           `xml:"CATALOG_NAME,omitempty" validate:"max=100"`
-	GenerationDate  *Datetime        `xml:"GENERATION_DATE"`
+	GenerationDate  *Date            `xml:"GENERATION_DATE"`
 	Territory       []string         `xml:"TERRITORY"`
 	AreaRefs        *AreaRefs        `xml:"AREA_REFS"`
 	Currency        *Currency        `xml:"CURRENCY"`
 	MimeRoot        *string          `xml:"MIME_	ROOT"`
 	PriceFlag       []TypeID         `xml:"PRICE_FLAG"`
 	PriceFactor     *float64         `xml:"PRICE_FACTOR"`
-	StartDate       *Datetime        `xml:"VALID_START_DATE"`
-	EndDate         *Datetime        `xml:"VALID_END_DATE"`
+	StartDate       *Date            `xml:"VALID_START_DATE"`
+	EndDate         *Date            `xml:"VALID_END_DATE"`
 	ProductType     *string          `xml:"PRODUCT_TYPE"`
 	CountryOfOrigin *string          `xml:"COUNTRY_OF_ORIGIN"`
 	DeliveryTimes   *[]DeliveryTimes `xml:"DELIVERY_TIMES"`
@@ -117,8 +117,8 @@ type Agreement struct {
 
 	ID                   string     `xml:"AGREEMENT_ID" validate:"required"`
 	LineID               string     `xml:"AGREEMENT_LINE_ID"`
-	StartDate            Datetime   `xml:"AGREEMENT_START_DATE"`
-	EndDate              Datetime   `xml:"AGREEMENT_END_DATE"`
+	StartDate            Date       `xml:"AGREEMENT_START_DATE"`
+	EndDate              Date       `xml:"AGREEMENT_END_DATE"`
 	AgreementDescription string     `xml:"AGREEMENT_DESC"`
 	MIMEInfo             []MIMEInfo `xml:"MIME"`
 }

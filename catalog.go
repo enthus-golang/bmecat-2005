@@ -43,11 +43,11 @@ type Group struct {
 }
 
 type VersionDetails struct {
-	Version      string   `xml:"VERSION"`
-	VersionDate  Datetime `xml:"VERSION_DATE"`
-	Revision     string   `xml:"REVISION"`
-	RevisionDate Datetime `xml:"REVISION_DATE"`
-	OriginalDate Datetime `xml:"ORIGINAL_DATE"`
+	Version      string `xml:"VERSION"`
+	VersionDate  Date   `xml:"VERSION_DATE"`
+	Revision     string `xml:"REVISION"`
+	RevisionDate Date   `xml:"REVISION_DATE"`
+	OriginalDate Date   `xml:"ORIGINAL_DATE"`
 }
 
 type LevelNames struct {
@@ -356,8 +356,8 @@ type Interval struct {
 	Value float64
 }
 type ConfigInfo struct {
-	StartDate    Datetime  `xml:"VALID_START_DATE"`
-	EndDate      Datetime  `xml:"VALID_END_DATE"`
+	StartDate    Date      `xml:"VALID_START_DATE"`
+	EndDate      Date      `xml:"VALID_END_DATE"`
 	DailyPrice   bool      `xml:"DAILY_PRICE"`
 	ProductPrice PriceType `xml:"PRODUCT_PRICE"`
 }
@@ -432,8 +432,8 @@ type PackingUnit struct {
 type ProductPriceDetails struct {
 	XMLName xml.Name `xml:"PRODUCT_PRICE_DETAILS"`
 
-	StartDate    Datetime     `xml:"VALID_START_DATE"`
-	EndDate      Datetime     `xml:"VALID_END_DATE"`
+	StartDate    Date         `xml:"VALID_START_DATE"`
+	EndDate      Date         `xml:"VALID_END_DATE"`
 	DailyPrice   bool         `xml:"DAILY_PRICE"`
 	ProductPrice ProductPrice `xml:"PRODUCT_PRICE"`
 }
