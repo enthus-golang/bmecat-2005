@@ -9,7 +9,7 @@ type Datetime struct {
 	Time string `xml:"TIME,omitempty"`
 }
 
-func NewDatetime(typ string, t time.Time, withTime bool) *Datetime {
+func NewDatetime(t time.Time, withTime bool) *Datetime {
 	d := &Datetime{
 		Date: t.Format("2006-01-02"),
 	}
