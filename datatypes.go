@@ -4,12 +4,12 @@ import (
 	"time"
 )
 
-type Datetime struct {
+type Date struct {
 	Date string
 }
 
-func NewDatetime(t time.Time) *Datetime {
-	d := &Datetime{
+func NewDate(t time.Time) *Date {
+	d := &Date{
 		Date: t.Format("2006-01-02"),
 	}
 
