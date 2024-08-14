@@ -1,5 +1,3 @@
-module gitlab.com/mclgmbh/golang-pkg/bmecat
+module github.com/enthus-golang/bmecat
 
-go 1.12
-
-require github.com/stretchr/testify v1.3.0
+go 1.22
