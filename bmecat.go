@@ -4,8 +4,8 @@ import "encoding/xml"
 
 const (
 	XMLNS    string = "http://www.bmecat.org/bmecat/2005/bmecat_new_catalog"
-	XMLNSXSI        = "http://www.w3.org/2001/XMLSchema-instance"
-	XSI             = "http://www.bmecat.org/bmecat/2005 bmecat_2005.xsd"
+	XMLNSXSI string = "http://www.w3.org/2001/XMLSchema-instance"
+	XSI      string = "http://www.bmecat.org/bmecat/2005 bmecat_2005.xsd"
 )
 
 type BMEcat2005 struct {

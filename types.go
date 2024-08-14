@@ -14,11 +14,11 @@ type ContactID string
 
 const (
 	PartyTypeBuyerSpecific    string = "buyer_specific"
-	PartyTypeCustomerSpecific        = "customer_specific"
-	PartyTypeDUNS                    = "duns"
-	PartyTypeILN                     = "iln"
-	PartyTypeGLN                     = "gln"
-	PartyTypeSupplierSpecific        = "supplier_specific"
+	PartyTypeCustomerSpecific string = "customer_specific"
+	PartyTypeDUNS             string = "duns"
+	PartyTypeILN              string = "iln"
+	PartyTypeGLN              string = "gln"
+	PartyTypeSupplierSpecific string = "supplier_specific"
 )
 
 type PartyID struct {
@@ -89,15 +89,15 @@ type PhoneType string
 
 const (
 	PhoneMobile  PhoneType = "mobile"
-	PhoneOffice            = "office"
-	PhonePrivate           = "private"
+	PhoneOffice  PhoneType = "office"
+	PhonePrivate PhoneType = "private"
 )
 
 type FaxType string
 
 const (
 	FaxOffice  FaxType = "office"
-	FaxPrivate         = "private"
+	FaxPrivate FaxType = "private"
 )
 
 type ContactName struct {
@@ -150,10 +150,10 @@ type PIDType string
 
 const (
 	PIDBuyerSpecific    PIDType = "buyer_specific"
-	PIDEAN                      = "ean"
-	PIDGTIN                     = "gtin"
-	PIDSupplierSpecific         = "supplier_specific"
-	PIDUPC                      = "upc"
+	PIDEAN              PIDType = "ean"
+	PIDGTIN             PIDType = "gtin"
+	PIDSupplierSpecific PIDType = "supplier_specific"
+	PIDUPC              PIDType = "upc"
 )
 
 type SupplierPID struct {

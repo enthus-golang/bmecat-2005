@@ -58,7 +58,7 @@ type LevelNames struct {
 type LevelName struct {
 	XMLName xml.Name `xml:"CLASSIFICATION_SYSTEM_LEVEL_NAME"`
 	Name    string   `xml:"CLASSIFICATION_SYSTEM_LEVEL_NAME"`
-	LevelID string   `xml:"attr,level"`
+	LevelID string   `xml:"level,attr"`
 }
 
 type SystemType struct {
@@ -120,7 +120,7 @@ type Formulas struct {
 type FormulaFunction struct {
 	XMLName xml.Name `xml:"FORMULA_FUNCTION"`
 	Term    []Term   `xml:"TERM"`
-	Type    string   `xml:"attr,type"`
+	Type    string   `xml:"type,attr"`
 }
 
 type Term struct {
@@ -593,7 +593,7 @@ type ConfigParts struct {
 type Alternative struct {
 	SupplierPID         string              `xml:"SUPPLIER_PIDREF"`
 	SupplierIDRef       TypeID              `xml:"SUPPLIER_IDREF"`
-	ProductOrderDetails ProductOrderDetails `xml:"PRODUCT_ORDER"`
+	ProductOrderDetails ProductOrderDetails `xml:"PRODUCT_ORDER_DETAILS"`
 	DefaultFlag         bool                `xml:"DEFAULT_FLAG"`
 	ConfigCode          int                 `xml:"CONFIG_CODE"`
 	ProductPriceDetails ProductPriceDetails `xml:"PRODUCT_PRICE_DETAILS"`
